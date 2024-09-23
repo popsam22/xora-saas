@@ -32,3 +32,14 @@ declare type FaqProps = {
   };
   index: number;
 };
+
+declare type TestimonialItemProps = {
+  item: {
+    id: string;
+    name: string;
+    role: string;
+    avatarUrl: string;
+    comment: string;
+  };
+  containerClassName: string;
+};
