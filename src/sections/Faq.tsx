@@ -1,4 +1,6 @@
 import { Element } from "react-scroll";
+import { faq } from "../constants";
+import FaqAccordion from "../components/FaqAccordion";
 const Faq = () => {
   return (
     <section>
@@ -19,7 +21,22 @@ const Faq = () => {
             <div className="flex items-center justify-center border-2 border-s2 bg-s1 rounded-half absolute -top-10 z-4 size-20 left-[calc(50%-40px)]">
               <img src="/images/faq-logo.svg" alt="logo" className="size-1/2" />
             </div>
+            <div className="flex-1 relative pt-24">
+              {faq.slice(0, Math.floor(faq.length / 2)).map((item, index) => (
+                <FaqAccordion key={item.id} item={item} index={index} />
+              ))}
+            </div>
+            <div className="flex-1 relative lg:pt-24">
+              {faq.slice(Math.floor(faq.length / 2)).map((item, index) => (
+                <FaqAccordion
+                  key={item.id}
+                  item={item}
+                  index={Math.floor(faq.length / 2) + index}
+                />
+              ))}
+            </div>
           </div>
+          <div className="absolute faq-lin_after left-[calc(50%-1px)] top-0 -z-1 h-full w-0.5 bg-s2 max-lg:hidden" />
         </div>
       </Element>
     </section>

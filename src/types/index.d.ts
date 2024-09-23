@@ -23,3 +23,12 @@ declare type Features = {
   text: string;
   button: Button;
 };
+
+declare type FaqProps = {
+  item: {
+    id: string;
+    question: string;
+    answer: string;
+  };
+  index: number;
+};
